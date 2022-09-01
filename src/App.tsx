@@ -9,7 +9,8 @@ function App() {
             <PageTitle title={'Users'}/>
             <Rating value={3}/>
             <Accordion title={'Hello'} collapsed = {true}/>
-            <Accordion title={'Tai kakaha'} collapsed = {false}/>
+            <Accordion title={'Tai kakaha'} collapsed = {true}/>
+            <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
