@@ -4,15 +4,22 @@ import {Rating, ratingValueType} from "./Components/Rating/Rating";
 import OnOff from "./OnOff/OnOff";
 import UncontrolledAccordion from "./Components/Accordion/Accordion";
 import UncontrolledRating1 from "./Components/Rating/UncontrolledRating-1";
+import UncontrolledOnOff from "./OnOff/UncontrolledOnOff";
 
 function App() {
 
     let [ratingValue, setRatingValue]=useState<ratingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed]=useState<boolean>(false)
+    let [switchOn, setSwitchOn]=useState<boolean>(false)
 
     return (
         <div>
-            <OnOff/>
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+            {/*<OnOff*/}
+            {/*    on={switchOn}*/}
+            {/*    onChange={(on)=>{setSwitchOn(on)}}*/}
+
+            {/*/>*/}
             {/*<UncontrolledAccordion title={'Tai kakaha'} />*/}
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating1/>
