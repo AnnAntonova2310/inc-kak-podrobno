@@ -5,6 +5,7 @@ import OnOff from "./OnOff/OnOff";
 import UncontrolledAccordion from "./Components/Accordion/Accordion";
 import UncontrolledRating1 from "./Components/Rating/UncontrolledRating-1";
 import UncontrolledOnOff from "./OnOff/UncontrolledOnOff";
+import {OnOffRep} from "./Repetition/OnOffRep";
 
 function App() {
 
@@ -14,20 +15,21 @@ function App() {
 
     return (
         <div>
-            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+            <OnOffRep on={true}/>
+            {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
             {/*<OnOff*/}
             {/*    on={switchOn}*/}
             {/*    onChange={(on)=>{setSwitchOn(on)}}*/}
 
             {/*/>*/}
             {/*<UncontrolledAccordion title={'Tai kakaha'} />*/}
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UncontrolledRating1/>
-            <Accordion
-                title={'Menu'}
-                collapsed={accordionCollapsed}
-                onClick={setAccordionCollapsed}
-            />
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
+            {/*<UncontrolledRating1/>*/}
+            {/*<Accordion*/}
+            {/*    title={'Menu'}*/}
+            {/*    collapsed={accordionCollapsed}*/}
+            {/*    onClick={setAccordionCollapsed}*/}
+            {/*/>*/}
         </div>
 
         // <div>
