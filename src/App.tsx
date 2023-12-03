@@ -1,60 +1,33 @@
-import React, {useState} from 'react';
-import Accordion from "./Components/Accordion/Accordion";
-import {Rating, ratingValueType} from "./Components/Rating/Rating";
-import OnOff from "./OnOff/OnOff";
-import UncontrolledAccordion from "./Components/Accordion/Accordion";
-import UncontrolledRating1 from "./Components/Rating/UncontrolledRating-1";
-import UncontrolledOnOff from "./OnOff/UncontrolledOnOff";
-import {OnOffRep} from "./Repetition/OnOffRep";
+import Accordion from './components/Accordion/accordion';
+import Rating from './components/Rating/rating';
 
 function App() {
-
-    let [ratingValue, setRatingValue]=useState<ratingValueType>(0)
-    let [accordionCollapsed, setAccordionCollapsed]=useState<boolean>(false)
-    let [switchOn, setSwitchOn]=useState<boolean>(false)
-
     return (
         <div>
-            <OnOffRep on={true}/>
-            {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
-            {/*<OnOff*/}
-            {/*    on={switchOn}*/}
-            {/*    onChange={(on)=>{setSwitchOn(on)}}*/}
-
-            {/*/>*/}
-            {/*<UncontrolledAccordion title={'Tai kakaha'} />*/}
-            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
-            {/*<UncontrolledRating1/>*/}
-            {/*<Accordion*/}
-            {/*    title={'Menu'}*/}
-            {/*    collapsed={accordionCollapsed}*/}
-            {/*    onClick={setAccordionCollapsed}*/}
-            {/*/>*/}
+            <PageTitle title={'This is APP component'}/>
+            <PageTitle title={'Users'}/>
+            Article 1
+            <Accordion titleValue={'---Menu---'} collapsed={true}/>
+            <Accordion titleValue={'---List---'} collapsed={false}/>
+            Article 2
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
+    );
+}
 
-        // <div>
-        //     <PageTitle title={'This is App-component'}/>
-        //     <PageTitle title={'Users'}/>
+type PageTitlePropsType = {
+    title: string
+}
 
-
-        //     <Rating value={0}/>
-        //     <Rating value={1}/>
-        //     <Rating value={2}/>
-        //     <Rating value={3}/>
-        //     <Rating value={4}/>
-        //     <Rating value={5}/>
-        // </div>
+function PageTitle(props: PageTitlePropsType) {
+    return (
+        <h1>{props.title}</h1>
     )
 }
 
 export default App;
-
-// type PageTitlePropsType = {
-//     title: string
-// }
-//
-// function PageTitle(props: PageTitlePropsType) {
-//     return <h1>{ props.title }</h1>
-//
-// }
-//
